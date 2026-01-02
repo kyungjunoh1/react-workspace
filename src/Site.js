@@ -15,11 +15,13 @@ function Site({arr, a_tag}){
         li = li.concat(<li><a href={v.href}>{v.txt}</a></li>)
         //li.push(<li><a href={v.href}>{v.txt}</a></li>)
    });
+   //const li = a_tag.map(v => <li key={v.href}><a href={v.href}>{v.txt}</a></li>);
 
-   const testArr = arr.map( value => <h3>{value}</h3>);
+
+   const testArr = arr.map( value => <h3 key={value}>{value}</h3>);
    //[ {} , {} , {} ]
    const testTag = a_tag.map(value => 
-                                <a href={value.href}>{value.txt}</a>);
+                                <a key={value.href} href={value.href}>{value.txt}</a>);
 
     return (<>
         <div>{ a_tag.map(value => 
